@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Portal.Viewmodels</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Viewmodel.fs" />
+    <Compile Include="Library.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Portal.Domain\02_Portal.Domain.fsproj" />
+    <ProjectReference Include="..\Portal.Specification\Portal.Specification.fsproj" />
+    <ProjectReference Include="..\UILogic\UILogic.fsproj" />
+  </ItemGroup>
+
+</Project>
