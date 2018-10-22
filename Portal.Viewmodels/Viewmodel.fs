@@ -5,6 +5,7 @@ open System.Windows.Input
 open Portal.Specification.Operations
 open Portal.Specification.Language
 open Portal.Domain.Converters
+open GetRide.Core
 
 type GetRide(passenger: Passenger, query: RideQuery) as x =
     let canRequest() =
@@ -15,7 +16,7 @@ type GetRide(passenger: Passenger, query: RideQuery) as x =
 
     let mutable pickup = ""
     let mutable destination = ""
-    let mutable ride = None
+    let mutable ride = Error <| ErrorDescription "Waiting on input"
 
     let requestRide() = 
         let execute() = (passenger, pickup |> generatePickup, destination |> generateDestination) |||> query

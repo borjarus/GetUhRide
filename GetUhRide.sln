@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Portal.Specification", "Portal.Specification\Portal.Specification.fsproj", "{AB357672-85F3-4E35-86C8-0BF2AB214680}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Portal.Specification", "Portal.Specification\Portal.Specification.fsproj", "{AB357672-85F3-4E35-86C8-0BF2AB214680}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Specification", "Specification", "{67F4C3A9-71B7-47F8-8A6F-218580B54ECC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Portal", "Portal", "{854F6E2C-05A5-48C9-94A1-2CA6F25C1E27}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "01_Portal.Viewmodels", "Portal.Viewmodels\01_Portal.Viewmodels.fsproj", "{EED56DBD-89E4-44AD-A4A6-E7678BD1A731}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "01_Portal.Viewmodels", "Portal.Viewmodels\01_Portal.Viewmodels.fsproj", "{EED56DBD-89E4-44AD-A4A6-E7678BD1A731}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "02_Portal.Domain", "Portal.Domain\02_Portal.Domain.fsproj", "{DF750F6C-0664-46B7-AE58-493AB9F90C73}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "02_Portal.Domain", "Portal.Domain\02_Portal.Domain.fsproj", "{DF750F6C-0664-46B7-AE58-493AB9F90C73}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Portal.Tests", "Portal.Tests\Portal.Tests.fsproj", "{21955AB0-808E-45C9-B521-8B5F13760882}"
 EndProject
@@ -19,9 +19,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ride", "Ride", "{CE8302A2-E
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App.Foundation", "App.Foundation", "{0D6897FF-8E99-4FE2-92DD-C3CF390D374C}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "UILogic", "UILogic\UILogic.fsproj", "{9AA1E8C7-AE4B-4603-8CDA-59673ADD62B4}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "UILogic", "UILogic\UILogic.fsproj", "{9AA1E8C7-AE4B-4603-8CDA-59673ADD62B4}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "TestAPI", "TestAPI\TestAPI.fsproj", "{5B42464D-2BBC-4FB8-847B-5EF3B97B76C9}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "TestAPI", "TestAPI\TestAPI.fsproj", "{5B42464D-2BBC-4FB8-847B-5EF3B97B76C9}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "GetRide.Core", "GetRide.Core\GetRide.Core.fsproj", "{81BD0C0D-EC99-4B8B-9D76-58A26D5747BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{5B42464D-2BBC-4FB8-847B-5EF3B97B76C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B42464D-2BBC-4FB8-847B-5EF3B97B76C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B42464D-2BBC-4FB8-847B-5EF3B97B76C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81BD0C0D-EC99-4B8B-9D76-58A26D5747BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81BD0C0D-EC99-4B8B-9D76-58A26D5747BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81BD0C0D-EC99-4B8B-9D76-58A26D5747BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81BD0C0D-EC99-4B8B-9D76-58A26D5747BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,6 +71,7 @@ Global
 		{21955AB0-808E-45C9-B521-8B5F13760882} = {67F4C3A9-71B7-47F8-8A6F-218580B54ECC}
 		{9AA1E8C7-AE4B-4603-8CDA-59673ADD62B4} = {0D6897FF-8E99-4FE2-92DD-C3CF390D374C}
 		{5B42464D-2BBC-4FB8-847B-5EF3B97B76C9} = {0D6897FF-8E99-4FE2-92DD-C3CF390D374C}
+		{81BD0C0D-EC99-4B8B-9D76-58A26D5747BE} = {0D6897FF-8E99-4FE2-92DD-C3CF390D374C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E887D766-C9C0-4BB0-ABBA-79E06AAED40E}

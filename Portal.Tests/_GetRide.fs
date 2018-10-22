@@ -19,6 +19,8 @@ let ``Providing pickup and destination result ina ride`` () =
 
     // Verify
     viewmodel.Ride 
-        |> function 
-            | Some v -> should equal Mock.someRide
-            | None -> failwith ""
+        |> function
+            | Ok result -> result |> function
+                                    | Some v -> v |> should equal Mock.someRide
+                                    | None -> failwith ""
+            | Error _ -> failwith ""

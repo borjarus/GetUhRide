@@ -30,4 +30,4 @@ module Mock =
     }
 
     let rideQuery: RideQuery =
-        fun _ _ _ -> Some someRide
+        fun _ _ _ -> Ok <| Some someRide

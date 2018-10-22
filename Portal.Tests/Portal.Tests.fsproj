@@ -71,6 +71,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GetRide.Core\GetRide.Core.fsproj">
+      <Name>GetRide.Core</Name>
+      <Project>{81bd0c0d-ec99-4b8b-9d76-58a26d5747be}</Project>
+      <Private>True</Private>
+    </ProjectReference>
     <ProjectReference Include="..\Portal.Specification\Portal.Specification.fsproj">
       <Name>Portal.Specification</Name>
       <Project>{ab357672-85f3-4e35-86c8-0bf2ab214680}</Project>

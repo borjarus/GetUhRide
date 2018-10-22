@@ -2,10 +2,10 @@
 
 open Portal.Specification.Language
 
-let generatePickup (pickupText:string):Pickup =
-    let isGPSCordinate text = false
+let generatePickup (pickup:string):Pickup =
+    let isGPSCordinate text = false // TODO
 
-    if pickupText |> isGPSCordinate
+    if pickup |> isGPSCordinate
     then Current <| (Latitude 123, Longtitude 456) 
     else Address { Address1 =   "not implemented"
                    Address2 =   "not implemented"
@@ -13,7 +13,7 @@ let generatePickup (pickupText:string):Pickup =
                    State =      "not implemented"
                    Postal =     "not implemented"}
 
-let generateDestination (destinationText:string): Destination =
+let generateDestination (destination:string): Destination =
     {   Address1 =   "not implemented"
         Address2 =   "not implemented"
         City =       "not implemented"
