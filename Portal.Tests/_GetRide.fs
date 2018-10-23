@@ -6,11 +6,11 @@ open Portal.Viewmodels
 open TestAPI
 
 [<Test>]
-let ``Providing pickup and destination result in a ride`` () = 
+let ``Providing pickup and destination result in ride`` () = 
     // Setup
     let viewmodel = GetRide(Mock.somePassenger, Mock.rideQuery)
 
-    viewmodel.Pickup <- Mock.somePickup
+    viewmodel.Pickup <- Mock.someLocation
     viewmodel.Destination <- Mock.someDestination
     
     // Test
@@ -26,7 +26,7 @@ let ``Providing pickup and destination result in a ride`` () =
             | Error _ -> failwith ""
 
 [<Test>]
-let ``Providing pickup and destination doesn't always result in a ride`` () = 
+let ``Providing not supported pickup and destination doesn't result in ride`` () = 
     // Setup
     let viewmodel = GetRide(Mock.somePassenger, Mock.nonfavorableRideQuery)
 
@@ -39,10 +39,42 @@ let ``Providing pickup and destination doesn't always result in a ride`` () =
 
     // Verify
     viewmodel.Ride 
-        |> function
+      |> function
             | Ok result -> 
                 result |> function
                         | None -> ()
                         | Some _ -> failwith ""
                         
             | Error _ -> failwith ""
+
+
+[<Test>]
+let ``Providing not supported pickup communicates no ride available`` () = 
+    // Setup
+    let viewmodel = GetRide(Mock.somePassenger, Mock.nonfavorableRideQuery)
+
+    viewmodel.Pickup <- Mock.someUnsupportedLocation
+    viewmodel.Destination <- Mock.someDestination
+    
+    // Test
+    viewmodel.Request.Execute()
+    
+
+    // Verify
+    viewmodel.IsRideAvailable |> should equal false
+
+
+[<Test>]
+let ``Providing supported pickup communicates ride available`` () = 
+    // Setup
+    let viewmodel = GetRide(Mock.somePassenger, Mock.rideQuery)
+
+    viewmodel.Pickup <- Mock.someLocation
+    viewmodel.Destination <- Mock.someDestination
+    
+    // Test
+    viewmodel.Request.Execute()
+    
+
+    // Verify
+    viewmodel.IsRideAvailable |> should equal true

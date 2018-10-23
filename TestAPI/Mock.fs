@@ -4,7 +4,7 @@ module Mock =
     open Portal.Specification.Language
     open Portal.Specification.Operations
 
-    let somePickup = "21 Jump st"
+    let someLocation = "21 Jump st"
     let someUnsupportedLocation = "E 100th & Hough"
     let someDestination = "E99 & St Claaire"
     
