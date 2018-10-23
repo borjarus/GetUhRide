@@ -5,6 +5,7 @@ module Mock =
     open Portal.Specification.Operations
 
     let somePickup = "21 Jump st"
+    let someUnsupportedLocation = "E 100th & Hough"
     let someDestination = "E99 & St Claaire"
     
     let somePassenger = Passenger {
@@ -31,3 +32,6 @@ module Mock =
 
     let rideQuery: RideQuery =
         fun _ _ _ -> Ok <| Some someRide
+
+    let nonfavorableRideQuery: RideQuery =
+        fun _ _ _ -> Ok None

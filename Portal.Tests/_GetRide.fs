@@ -6,7 +6,7 @@ open Portal.Viewmodels
 open TestAPI
 
 [<Test>]
-let ``Providing pickup and destination result ina ride`` () = 
+let ``Providing pickup and destination result in a ride`` () = 
     // Setup
     let viewmodel = GetRide(Mock.somePassenger, Mock.rideQuery)
 
@@ -23,4 +23,26 @@ let ``Providing pickup and destination result ina ride`` () =
             | Ok result -> result |> function
                                     | Some v -> v |> should equal Mock.someRide
                                     | None -> failwith ""
+            | Error _ -> failwith ""
+
+[<Test>]
+let ``Providing pickup and destination doesn't always result in a ride`` () = 
+    // Setup
+    let viewmodel = GetRide(Mock.somePassenger, Mock.nonfavorableRideQuery)
+
+    viewmodel.Pickup <- Mock.someUnsupportedLocation
+    viewmodel.Destination <- Mock.someDestination
+    
+    // Test
+    viewmodel.Request.Execute()
+    
+
+    // Verify
+    viewmodel.Ride 
+        |> function
+            | Ok result -> 
+                result |> function
+                        | None -> ()
+                        | Some _ -> failwith ""
+                        
             | Error _ -> failwith ""

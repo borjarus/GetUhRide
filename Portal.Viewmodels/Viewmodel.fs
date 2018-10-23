@@ -19,8 +19,7 @@ type GetRide(passenger: Passenger, query: RideQuery) as x =
     let mutable ride = Error <| ErrorDescription "Waiting on input"
 
     let requestRide() = 
-        let execute() = (passenger, pickup |> generatePickup, destination |> generateDestination) |||> query
-        x.Ride <- execute()
+        x.Ride <- (passenger, pickup |> generatePickup, destination |> generateDestination) |||> query
 
     member x.Pickup with get() = pickup
                        and set(v) = pickup <- v
