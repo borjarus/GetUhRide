@@ -5,12 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Mock.fs" />
+    <Compile Include="Language.fs" />
+    <Compile Include="Operation.fs" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\GetRide.Core\GetRide.Core.fsproj" />
-    <ProjectReference Include="..\Portal.Specification\Portal.Specification.fsproj" />
   </ItemGroup>
 
 </Project>

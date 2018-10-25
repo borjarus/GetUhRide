@@ -1,8 +1,11 @@
 namespace TestAPI
 
+
+
 module Mock =
     open Portal.Specification.Language
     open Portal.Specification.Operations
+    open GetRide.Core
 
     let someLocation = "21 Jump st"
     let someUnsupportedLocation = "E 100th & Hough"
@@ -24,8 +27,11 @@ module Mock =
         Year = TwoDigitYear 99
         Color = Red
     }
+
+    let someRideId = RideId "some_ride_id"
     
     let someRide = {
+        RideId = someRideId
         Driver = someDriver
         Vehicle = someVehicle
     }
