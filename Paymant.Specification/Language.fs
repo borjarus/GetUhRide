@@ -1,14 +1,19 @@
 namespace Account.Specification.Language
 
 open GetRide.Core
-open System.ComponentModel.Design
+open System.Reflection
+open System.Runtime.CompilerServices
 
-type CardNumber = CardNumber of int
+[<assembly:InternalsVisibleTo("TestAPI")>]
+do()
+
+type CardNumber = CardNumber of int64
 type SecurityCode = SecurityCode of int
 
 type Month = | January | February | March | April 
-                     | May | June |July | August 
-                     | September | October | November | December 
+             | May | June |July | August 
+             | September | October | November | December 
+             | Undefined
 
 
 type ExpirationDate = {
@@ -16,9 +21,9 @@ type ExpirationDate = {
     YY: TwoDigitYear
 }
 
-type CardType = | Mastercard | Visa | AmericanExpress | Discover
+type CardType = | Mastercard | Visa | AmericanExpress | Discover | Invalid
 
-type Card = private {
+type Card = {
     Type: CardType
     Holder: Person
     CardNumber: CardNumber
@@ -27,11 +32,11 @@ type Card = private {
     SecurityCode: SecurityCode
 }
 
-type NotValidatedCardType = {
+type NotValidatedCard = {
     Card: Card
 }
 
-type ValidatedCardType = {
+type ValidatedCard = internal {
     Card: Card
 }
 
@@ -51,3 +56,12 @@ type Fee = decimal<USD>
 
 
 type TransactionHistory = PaymentTransaction list
+
+type AddPaymantTypeFailureReason =
+    | Connection of string
+    | HolderName' of string
+    | ExpirationMonth' of string
+    | ExpirationYear' of string
+    | SecurityCode' of string
+    | CardNumber' of string
+    | CardType' of string

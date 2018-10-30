@@ -8,9 +8,9 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>e1fd85f2-2ee4-43a5-a2e6-3cf257ad3dfa</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>Payment.Tests</RootNamespace>
-    <AssemblyName>Account.Tests</AssemblyName>
+    <AssemblyName>_Account.Tests</AssemblyName>
     <UseStandardResourceNames>true</UseStandardResourceNames>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,7 +46,7 @@
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="Library1.fs" />
+    <Compile Include="_Account.fs" />
     <None Include="Script.fsx" />
     <Content Include="packages.config" />
   </ItemGroup>
@@ -68,6 +68,33 @@
       <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net461\System.ValueTuple.dll</HintPath>
       <Private>True</Private>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Account.viewmodels\01_Account.viewmodels.fsproj">
+      <Name>01_Account.Viewmodels</Name>
+      <Project>{a4659dae-ed3f-4ab3-9f6d-9718c2435ac6}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\GetRide.Core\GetRide.Core.fsproj">
+      <Name>GetRide.Core</Name>
+      <Project>{81bd0c0d-ec99-4b8b-9d76-58a26d5747be}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Paymant.Specification\Account.Specification.fsproj">
+      <Name>Account.Specification</Name>
+      <Project>{c8985a7d-7fbd-4deb-bb89-6625ee3a655b}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\TestAPI\TestAPI.fsproj">
+      <Name>TestAPI</Name>
+      <Project>{5b42464d-2bbc-4fb8-847b-5ef3b97b76c9}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\UILogic\UILogic.fsproj">
+      <Name>UILogic</Name>
+      <Project>{9aa1e8c7-ae4b-4603-8cda-59673add62b4}</Project>
+      <Private>True</Private>
+    </ProjectReference>
   </ItemGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

@@ -30,9 +30,10 @@ type Credentials = {
     Password: Password
 }
 
-type Account = private {
+type Account = {
     Id: AccountId
     Holder: Person
+    BillingAddress: Address
 }
 
 type Driver = Driver of Person

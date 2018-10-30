@@ -6,10 +6,21 @@ module Mock =
     open Portal.Specification.Language
     open Portal.Specification.Operations
     open GetRide.Core
+    open Account.Specification.Operations
+    open Account.Specification.Language
 
     let someLocation = "21 Jump st"
     let someUnsupportedLocation = "E 100th & Hough"
     let someDestination = "E99 & St Claaire"
+
+    let someFirstName = "Mike"
+    let someLastName = "Jones"
+    let someSecurityNumber = "123"
+    let someCardNumber = "12345678912345"
+
+    let someExpirationMonth = "01"
+    let someExpirationYear= "22"
+
     
     let somePassenger = Passenger {
         FirstName = FirstName "Scott"
@@ -41,3 +52,22 @@ module Mock =
 
     let nonfavorableRideQuery: RideQuery =
         fun _ _ _ -> Ok None
+    
+    let someAccountId = AccountId 123
+    let someAddress = {
+        Address1= "21 jump St"
+        Address2= ""
+        City = "East Cleveland"
+        State = "Ohio"
+        Postal = "90210"
+    }
+
+    let someAccount:Account = {
+        Id = someAccountId
+        Holder = { FirstName = FirstName "John";LastName = LastName "Roach" }
+        BillingAddress = someAddress
+    }
+    let successfulAttempt:Attempt = {
+        AddPaymantType= fun account notValidatedCard -> Ok { ValidatedCard.Card= notValidatedCard.Card}
+        RemovePaymantType= fun account card -> Ok []
+    }
