@@ -8,11 +8,13 @@ module Mock =
     open GetRide.Core
     open Account.Specification.Operations
     open Account.Specification.Language
+    open Account.Viewmodels
 
     let someLocation = "21 Jump st"
     let someUnsupportedLocation = "E 100th & Hough"
     let someDestination = "E99 & St Claaire"
 
+    let someName = "Mike Jones"
     let someFirstName = "Mike"
     let someLastName = "Jones"
     let someSecurityNumber = "123"
@@ -68,6 +70,21 @@ module Mock =
         BillingAddress = someAddress
     }
     let successfulAttempt:Attempt = {
-        AddPaymantType= fun account notValidatedCard -> Ok { ValidatedCard.Card= notValidatedCard.Card}
-        RemovePaymantType= fun account card -> Ok []
+        AddPaymantType= fun _ notValidatedCard -> Ok { ValidatedCard.Card= notValidatedCard.Card}
+        RemovePaymantType= fun _ _ -> Ok []
     }
+
+    let setPaymantType (viewmodel: AddPaymantTypes) cardType = 
+        viewmodel.PaymantType <- cardType
+        viewmodel.Name <-someName
+        viewmodel.SecurityNumber <- someSecurityNumber
+        viewmodel.ExpirationMonth <- someExpirationMonth
+        viewmodel.ExpirationYear <- someExpirationYear
+        viewmodel.CardNumber <- someCardNumber
+    
+    let validatedCard = 
+        let viewmodel = AddPaymantTypes(someAccount, successfulAttempt, [])
+    
+        "Visa" |> setPaymantType viewmodel 
+        viewmodel.AddPaymentType.Execute()
+        viewmodel.AddedCard

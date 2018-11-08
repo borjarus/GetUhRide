@@ -1,5 +1,7 @@
 module GetRide.Core
 
+let broadcast handlers msg = () // todo
+
 type ErrorDescription = ErrorDescription of string
 
 type Username = Username of string

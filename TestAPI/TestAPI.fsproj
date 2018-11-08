@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Account.viewmodels\01_Account.Viewmodels.fsproj" />
     <ProjectReference Include="..\GetRide.Core\GetRide.Core.fsproj" />
     <ProjectReference Include="..\Paymant.Specification\Account.Specification.fsproj" />
     <ProjectReference Include="..\Portal.Specification\Portal.Specification.fsproj" />
