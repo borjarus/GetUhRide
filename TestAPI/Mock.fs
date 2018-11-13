@@ -23,6 +23,8 @@ module Mock =
     let someExpirationMonth = "01"
     let someExpirationYear= "22"
 
+    let someCardName = "visa"
+    let someOtherCardName = "mastercard"
     
     let somePassenger = Passenger {
         FirstName = FirstName "Scott"
@@ -74,17 +76,17 @@ module Mock =
         RemovePaymantType= fun _ _ -> Ok []
     }
 
-    let setPaymantType (viewmodel: AddPaymantTypes) cardType = 
-        viewmodel.PaymantType <- cardType
+    let setPaymantType (viewmodel: AddBankCard) cardType = 
+        viewmodel.BankCard <- cardType
         viewmodel.Name <-someName
         viewmodel.SecurityNumber <- someSecurityNumber
         viewmodel.ExpirationMonth <- someExpirationMonth
         viewmodel.ExpirationYear <- someExpirationYear
         viewmodel.CardNumber <- someCardNumber
     
-    let validatedCard = 
-        let viewmodel = AddPaymantTypes(someAccount, successfulAttempt, [])
+    let validatedCard cardType = 
+        let viewmodel = AddBankCard(someAccount, successfulAttempt, [])
     
-        "Visa" |> setPaymantType viewmodel 
-        viewmodel.AddPaymentType.Execute()
+        cardType |> setPaymantType viewmodel 
+        viewmodel.AddBankCard.Execute()
         viewmodel.AddedCard

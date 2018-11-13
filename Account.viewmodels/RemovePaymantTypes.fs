@@ -16,7 +16,8 @@ type RemovePaymantTypes(account: Account, attempt: Attempt, handlers) as x  =
     let submit = function
         | Some card -> (account, card) ||> attempt.RemovePaymantType
                             |> function 
-                                | Ok cards -> x.Cards <- cards; x.PaymantTypeRemoved <- true
+                                | Ok cards -> x.Cards <- x.Cards |> List.filter  (fun c -> c <> card)
+                                              x.PaymantTypeRemoved <- true
                                 | Error msg -> broadcast msg handlers
         | None -> x.PaymantTypeRemoved <- false
 
@@ -26,7 +27,7 @@ type RemovePaymantTypes(account: Account, attempt: Attempt, handlers) as x  =
     member x.Cards with get() = cards
                    and set(v)= cards <- v
 
-    member x.RemovePaymentType = DelegateCommand((fun _ -> submit x.Card),(fun _ -> true)) :> ICommand
+    member x.RemoveBankCard = DelegateCommand((fun _ -> submit x.Card),(fun _ -> true)) :> ICommand
 
     member x.PaymantTypeRemoved with get() = paymantTypeRemoved
                                  and set (v) = paymantTypeRemoved <- v

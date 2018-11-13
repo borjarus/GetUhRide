@@ -10,7 +10,7 @@ open Account.Domain
 
 
 
-type AddPaymantTypes(account: Account, attempt: Attempt, handlers) as x =
+type AddBankCard(account: Account, attempt: Attempt, handlers) as x =
     let mutable cardType = ""
     let mutable name = ""
     let mutable cardNumber = ""
@@ -44,7 +44,7 @@ type AddPaymantTypes(account: Account, attempt: Attempt, handlers) as x =
             | Error msg -> msg |> broadcast handlers
 
 
-    member x.PaymantType with get() = cardType
+    member x.BankCard with get() = cardType
                          and set(v) = cardType <- v
 
     member x.Name with get () = name
@@ -68,5 +68,5 @@ type AddPaymantTypes(account: Account, attempt: Attempt, handlers) as x =
     member x.AddedCard with get() = addedCard
                                 and set (v) = addedCard <- v
 
-    member x.AddPaymentType = DelegateCommand((fun _ -> submit()),(fun _ -> true)) :> ICommand
+    member x.AddBankCard = DelegateCommand((fun _ -> submit()),(fun _ -> true)) :> ICommand
 
