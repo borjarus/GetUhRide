@@ -9,12 +9,12 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>21955ab0-808e-45c9-b521-8b5f13760882</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Portal.Tests</RootNamespace>
-    <AssemblyName>Portal.Tests</AssemblyName>
+    <RootNamespace>Ride.Tests</RootNamespace>
+    <AssemblyName>Ride.Tests</AssemblyName>
     <UseStandardResourceNames>true</UseStandardResourceNames>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Name>Portal.Tests</Name>
+    <Name>Ride.Tests</Name>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -46,10 +46,9 @@
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="Library1.fs" />
-    <None Include="Script.fsx" />
     <Content Include="packages.config" />
     <Compile Include="_GetRide.fs" />
+    <Compile Include="_CancelRide.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Core">
@@ -76,13 +75,13 @@
       <Project>{81bd0c0d-ec99-4b8b-9d76-58a26d5747be}</Project>
       <Private>True</Private>
     </ProjectReference>
-    <ProjectReference Include="..\Portal.Specification\Portal.Specification.fsproj">
-      <Name>Portal.Specification</Name>
+    <ProjectReference Include="..\Ride.Specification\Ride.Specification.fsproj">
+      <Name>Ride.Specification</Name>
       <Project>{ab357672-85f3-4e35-86c8-0bf2ab214680}</Project>
       <Private>True</Private>
     </ProjectReference>
-    <ProjectReference Include="..\Portal.Viewmodels\01_Portal.Viewmodels.fsproj">
-      <Name>01_Portal.Viewmodels</Name>
+    <ProjectReference Include="..\Ride.Viewmodels\01_Ride.Viewmodels.fsproj">
+      <Name>01_Ride.Viewmodels</Name>
       <Project>{eed56dbd-89e4-44ad-a4a6-e7678bd1a731}</Project>
       <Private>True</Private>
     </ProjectReference>

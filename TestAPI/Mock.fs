@@ -3,8 +3,8 @@ namespace TestAPI
 
 
 module Mock =
-    open Portal.Specification.Language
-    open Portal.Specification.Operations
+    open Ride.Specification.Language
+    open Ride.Specification.Operations
     open GetRide.Core
     open Account.Specification.Operations
     open Account.Specification.Language
@@ -44,6 +44,7 @@ module Mock =
     }
 
     let someRideId = RideId "some_ride_id"
+    let someCancellationId = CancallationId "some_cancellation_id"
     
     let someRide = {
         RideId = someRideId
@@ -51,10 +52,24 @@ module Mock =
         Vehicle = someVehicle
     }
 
-    let rideQuery: RideQuery =
+
+
+    let rideQuery: RequestRide =
         fun _ _ _ -> Ok <| Some someRide
 
-    let nonfavorableRideQuery: RideQuery =
+    let nonFavorableRideQuery: RequestRide =
+        fun _ _ _ -> Ok None
+
+    let cancelRide: CancelRide = 
+        fun _ -> Some {CancallationId = someCancellationId; Ride= someRide }
+
+    let request: Request = {
+        Ride= rideQuery
+        Cancel = cancelRide
+    }
+        
+
+    let nonfavorableRideQuery: RequestRide =
         fun _ _ _ -> Ok None
     
     let someAccountId = AccountId 123
@@ -78,7 +93,7 @@ module Mock =
 
     let setPaymantType (viewmodel: AddBankCard) cardType = 
         viewmodel.BankCard <- cardType
-        viewmodel.Name <-someName
+        viewmodel.HolderName <-someName
         viewmodel.SecurityNumber <- someSecurityNumber
         viewmodel.ExpirationMonth <- someExpirationMonth
         viewmodel.ExpirationYear <- someExpirationYear

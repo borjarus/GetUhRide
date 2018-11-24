@@ -45,7 +45,7 @@ type TransactionId = private TransactionId of string
 type PaymentTransaction = {
     RideId: RideId
     TransactionId: TransactionId
-    Ride: Ride
+    Ride: PendingRide
 }
 
 [<Measure>]

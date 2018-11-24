@@ -1,6 +1,6 @@
-﻿module Portal.Domain.Converters
+﻿module Ride.Domain.Converters
 
-open Portal.Specification.Language
+open Ride.Specification.Language
 
 let generatePickup (pickup:string):Pickup =
     let isGPSCordinate text = false // TODO

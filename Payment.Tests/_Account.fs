@@ -11,7 +11,7 @@ let ``Valid card result in successful 'add bank card' operation`` () =
     // Setup
     let viewmodel = AddBankCard(Mock.someAccount, Mock.successfulAttempt, [])
     viewmodel.BankCard <- "Visa"
-    viewmodel.Name <- Mock.someName
+    viewmodel.HolderName <- Mock.someName
     viewmodel.SecurityNumber <- Mock.someSecurityNumber
     viewmodel.ExpirationMonth <- Mock.someExpirationMonth
     viewmodel.ExpirationYear <- Mock.someExpirationYear

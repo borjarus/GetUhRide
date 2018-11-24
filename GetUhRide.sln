@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Portal.Specification", "Portal.Specification\Portal.Specification.fsproj", "{AB357672-85F3-4E35-86C8-0BF2AB214680}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Ride.Specification", "Ride.Specification\Ride.Specification.fsproj", "{AB357672-85F3-4E35-86C8-0BF2AB214680}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Specification", "Specification", "{67F4C3A9-71B7-47F8-8A6F-218580B54ECC}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01_Portal", "01_Portal", "{854F6E2C-05A5-48C9-94A1-2CA6F25C1E27}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01_Ride", "01_Ride", "{854F6E2C-05A5-48C9-94A1-2CA6F25C1E27}"
 EndProject
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "01_Portal.Viewmodels", "Portal.Viewmodels\01_Portal.Viewmodels.fsproj", "{EED56DBD-89E4-44AD-A4A6-E7678BD1A731}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "01_Ride.Viewmodels", "Ride.Viewmodels\01_Ride.Viewmodels.fsproj", "{EED56DBD-89E4-44AD-A4A6-E7678BD1A731}"
 EndProject
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "02_Portal.Domain", "Portal.Domain\02_Portal.Domain.fsproj", "{DF750F6C-0664-46B7-AE58-493AB9F90C73}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "02_Ride.Domain", "Ride.Domain\02_Ride.Domain.fsproj", "{DF750F6C-0664-46B7-AE58-493AB9F90C73}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Portal.Tests", "Portal.Tests\Portal.Tests.fsproj", "{21955AB0-808E-45C9-B521-8B5F13760882}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Ride.Tests", "Ride.Tests\Ride.Tests.fsproj", "{21955AB0-808E-45C9-B521-8B5F13760882}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02_Account", "02_Account", "{CE8302A2-E80D-4166-B764-E415D3EE1DF3}"
 EndProject
@@ -33,7 +33,9 @@ Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Account.Specification", "Pa
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "01_Account.Viewmodels", "Account.viewmodels\01_Account.Viewmodels.fsproj", "{A4659DAE-ED3F-4AB3-9F6D-9718C2435AC6}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "02_Account.Domain", "Account.Domain\02_Account.Domain.fsproj", "{291956E5-DA0C-4708-B839-259AA60B3C51}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "02_Account.Domain", "Account.Domain\02_Account.Domain.fsproj", "{291956E5-DA0C-4708-B839-259AA60B3C51}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AppLogic", "AppLogic\AppLogic.fsproj", "{690AE577-39D9-4F7C-BF32-50A8BA2ABDB8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -85,6 +87,10 @@ Global
 		{291956E5-DA0C-4708-B839-259AA60B3C51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{291956E5-DA0C-4708-B839-259AA60B3C51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{291956E5-DA0C-4708-B839-259AA60B3C51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{690AE577-39D9-4F7C-BF32-50A8BA2ABDB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{690AE577-39D9-4F7C-BF32-50A8BA2ABDB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{690AE577-39D9-4F7C-BF32-50A8BA2ABDB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{690AE577-39D9-4F7C-BF32-50A8BA2ABDB8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -103,6 +109,7 @@ Global
 		{C8985A7D-7FBD-4DEB-BB89-6625EE3A655B} = {07DF31F2-F590-46C5-8085-AEC1714B9FC4}
 		{A4659DAE-ED3F-4AB3-9F6D-9718C2435AC6} = {CE8302A2-E80D-4166-B764-E415D3EE1DF3}
 		{291956E5-DA0C-4708-B839-259AA60B3C51} = {CE8302A2-E80D-4166-B764-E415D3EE1DF3}
+		{690AE577-39D9-4F7C-BF32-50A8BA2ABDB8} = {0D6897FF-8E99-4FE2-92DD-C3CF390D374C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E887D766-C9C0-4BB0-ABBA-79E06AAED40E}

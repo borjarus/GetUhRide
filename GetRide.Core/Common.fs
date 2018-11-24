@@ -54,7 +54,7 @@ type Vehicle = {
 
 type RideId = RideId of string
 
-type Ride = {
+type PendingRide = {
     RideId: RideId    
     Driver: Driver
     Vehicle: Vehicle

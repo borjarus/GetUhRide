@@ -2,17 +2,17 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Ride.Viewmodels</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Mock.fs" />
+    <Compile Include="GetRide.fs" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Account.viewmodels\01_Account.Viewmodels.fsproj" />
-    <ProjectReference Include="..\GetRide.Core\GetRide.Core.fsproj" />
-    <ProjectReference Include="..\Paymant.Specification\Account.Specification.fsproj" />
+    <ProjectReference Include="..\Ride.Domain\02_Ride.Domain.fsproj" />
     <ProjectReference Include="..\Ride.Specification\Ride.Specification.fsproj" />
+    <ProjectReference Include="..\UILogic\UILogic.fsproj" />
   </ItemGroup>
 
 </Project>

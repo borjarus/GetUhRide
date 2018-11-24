@@ -2,13 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>Portal.Specification</AssemblyName>
+    <AssemblyName>Ride.Specification</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
     <Compile Include="Language.fs" />
+    <Compile Include="Events.fs" />
     <Compile Include="Operations.fs" />
-    <Compile Include="Library.fs" />
   </ItemGroup>
 
   <ItemGroup>

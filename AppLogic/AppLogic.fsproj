@@ -5,12 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Mock.fs" />
+    <Compile Include="Library.fs" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Account.viewmodels\01_Account.Viewmodels.fsproj" />
-    <ProjectReference Include="..\GetRide.Core\GetRide.Core.fsproj" />
     <ProjectReference Include="..\Paymant.Specification\Account.Specification.fsproj" />
     <ProjectReference Include="..\Ride.Specification\Ride.Specification.fsproj" />
   </ItemGroup>

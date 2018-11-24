@@ -47,7 +47,7 @@ type AddBankCard(account: Account, attempt: Attempt, handlers) as x =
     member x.BankCard with get() = cardType
                          and set(v) = cardType <- v
 
-    member x.Name with get () = name
+    member x.HolderName with get () = name
                         and set(v) = name <- v
 
     member x.SecurityNumber with get () = securityCode
